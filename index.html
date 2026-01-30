@@ -3,13 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My2Sats Apps</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>TRONSINGTON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background-color: #0d0d0d;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(247, 147, 26, 0.03) 2px,
+                    rgba(247, 147, 26, 0.03) 4px
+                );
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .header::before {
+            content: '* * * * *';
+            display: block;
+            color: #F7931A;
+            letter-spacing: 1rem;
+            margin-bottom: 1rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5rem;
+            color: #F7931A;
+            text-shadow:
+                3px 3px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000;
+            letter-spacing: 0.1em;
+            transform: rotate(-2deg);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #888;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: 3px solid #F7931A;
+            color: #F7931A;
+            text-decoration: none;
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.1s ease;
+            position: relative;
+            clip-path: polygon(
+                0 4px, 4px 4px, 4px 0,
+                calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px,
+                100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%,
+                4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px)
+            );
+        }
+
+        .link-btn:hover {
+            background: #F7931A;
+            color: #0d0d0d;
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0 #ff6b00;
+        }
+
+        .link-btn:active {
+            transform: translate(0, 0);
+            box-shadow: none;
+        }
+
+        .link-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            color: #F7931A;
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+        }
+
+        .btcpay-section h2 {
+            font-family: 'Permanent Marker', cursive;
+            color: #F7931A;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .tip-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .tip-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: transparent;
+            border: 3px solid #F7931A;
+            color: #F7931A;
+            text-decoration: none;
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            clip-path: polygon(
+                0 4px, 4px 4px, 4px 0,
+                calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px,
+                100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%,
+                4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px)
+            );
+        }
+
+        .tip-btn:hover {
+            background: #F7931A;
+            color: #0d0d0d;
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0 #ff6b00;
+        }
+
+        .tip-btn:active {
+            transform: translate(0, 0);
+            box-shadow: none;
+        }
+
+
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        .footer span {
+            color: #F7931A;
+        }
+
+        /* Glitch effect on hover for header */
+        .header:hover h1 {
+            animation: glitch 0.3s ease;
+        }
+
+        @keyframes glitch {
+            0% { transform: rotate(-2deg) translate(0); }
+            20% { transform: rotate(-2deg) translate(-2px, 2px); }
+            40% { transform: rotate(-2deg) translate(2px, -2px); }
+            60% { transform: rotate(-2deg) translate(-2px, -2px); }
+            80% { transform: rotate(-2deg) translate(2px, 2px); }
+            100% { transform: rotate(-2deg) translate(0); }
+        }
+
+        /* Scanline overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                transparent,
+                transparent 1px,
+                rgba(0, 0, 0, 0.1) 1px,
+                rgba(0, 0, 0, 0.1) 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <iframe src='https://my2sats.xyz/apps/29JsP331cMyjNUrfDjudWt3nZJti/pos' style='max-width: 100%; border: 0;'></iframe>
-        <iframe src='https://my2sats.xyz/apps/4RnbcaUAvaTgvifpC5PaMXFLuy5M/pos' style='max-width: 100%; border: 0;'></iframe>
+        <header class="header">
+            <h1>TRONSINGTON</h1>
+            <p class="tagline">// stack sats. stay punk. //</p>
+        </header>
+
+        <nav class="links">
+            <a href="https://github.com/tronsington" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+
+            <a href="https://x.com/tronsington" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                Twitter
+            </a>
+
+            <a href="https://primal.net/p/nprofile1qqsr6hnx7j58mtjwfcwd264fad75x9sx90r2rxegjxl63y88239aymqkhl3cm" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Ostrich icon -->
+                    <path d="M12 2c-1.1 0-2 .9-2 2 0 .7.4 1.4 1 1.7V7c-2.2.5-4 2.5-4 4.9V14l-2 4h2l1-2h8l1 2h2l-2-4v-2.1c0-2.4-1.8-4.4-4-4.9V5.7c.6-.3 1-1 1-1.7 0-1.1-.9-2-2-2zm-1 4.5a.5.5 0 110-1 .5.5 0 010 1zM9 18v4h2v-4H9zm4 0v4h2v-4h-2z"/>
+                </svg>
+                Nostr
+            </a>
+
+            <a href="https://exergyheat.com" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Flame icon -->
+                    <path d="M12 23c-3.9 0-7-3.1-7-7 0-2.1.9-4.5 2.6-7.1.4-.6.8-1.1 1.2-1.6L12 4l3.2 3.3c.4.5.8 1 1.2 1.6C18.1 11.5 19 13.9 19 16c0 3.9-3.1 7-7 7zm0-15.5l-1.8 1.9c-.4.4-.7.8-1 1.3C7.8 12.6 7 14.5 7 16c0 2.8 2.2 5 5 5s5-2.2 5-5c0-1.5-.8-3.4-2.2-5.3-.3-.5-.6-.9-1-1.3L12 7.5z"/>
+                </svg>
+                Exergy
+            </a>
+
+            <a href="https://heatpunks.org" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fire/punk icon -->
+                    <path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.58.58 0 01-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27z"/>
+                </svg>
+                Heatpunks
+            </a>
+
+            <a href="https://denver.space" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Mountain/location icon -->
+                    <path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/>
+                </svg>
+                The Space
+            </a>
+
+            <a href="https://www.thermozaps.xyz/" target="_blank" rel="noopener" class="link-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Lightning bolt icon -->
+                    <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+                </svg>
+                Thermozaps
+            </a>
+        </nav>
+
+        <div class="divider">- - - ZAP ME - - -</div>
+
+        <section class="btcpay-section">
+            <h2>// TIP JAR //</h2>
+            <div class="tip-buttons">
+                <a href="https://my2sats.xyz/apps/29JsP331cMyjNUrfDjudWt3nZJti/pos" target="_blank" rel="noopener" class="tip-btn">$ USD</a>
+                <a href="https://my2sats.xyz/apps/4RnbcaUAvaTgvifpC5PaMXFLuy5M/pos" target="_blank" rel="noopener" class="tip-btn">&#x20bf; SATS</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>&#x20bf;</span> NO KYC <span>&#x20bf;</span> NO MASTERS <span>&#x20bf;</span>
+        </footer>
     </div>
 </body>
 </html>

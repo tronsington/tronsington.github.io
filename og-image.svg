@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#0d0d0d"/>
+      <rect width="4" height="2" fill="rgba(247, 147, 26, 0.03)"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0d0d0d"/>
+  <rect width="1200" height="630" fill="url(#scanlines)"/>
+
+  <!-- Decorative stars -->
+  <text x="600" y="180" text-anchor="middle" fill="#F7931A" font-family="monospace" font-size="32" letter-spacing="20">* * * * *</text>
+
+  <!-- Lightning bolts on sides -->
+  <g fill="#F7931A" opacity="0.3">
+    <path d="M150 200v110h30v90l70-120h-40l40-80z"/>
+    <path d="M1050 200v110h30v90l70-120h-40l40-80z"/>
+  </g>
+
+  <!-- Main title -->
+  <text x="600" y="320" text-anchor="middle" fill="#F7931A" font-family="Arial Black, sans-serif" font-size="120" font-weight="bold" filter="url(#glow)">TRONSINGTON</text>
+
+  <!-- Shadow effect for title -->
+  <text x="604" y="324" text-anchor="middle" fill="#000" font-family="Arial Black, sans-serif" font-size="120" font-weight="bold" opacity="0.5">TRONSINGTON</text>
+  <text x="600" y="320" text-anchor="middle" fill="#F7931A" font-family="Arial Black, sans-serif" font-size="120" font-weight="bold">TRONSINGTON</text>
+
+  <!-- Tagline -->
+  <text x="600" y="400" text-anchor="middle" fill="#888" font-family="monospace" font-size="36" letter-spacing="8">// STACK SATS. STAY PUNK. //</text>
+
+  <!-- Bottom decoration -->
+  <text x="600" y="520" text-anchor="middle" fill="#F7931A" font-family="monospace" font-size="28" letter-spacing="4">&#x20BF; NO KYC &#x20BF; NO MASTERS &#x20BF;</text>
+
+  <!-- Border -->
+  <rect x="20" y="20" width="1160" height="590" fill="none" stroke="#F7931A" stroke-width="4" opacity="0.5"/>
+</svg>
